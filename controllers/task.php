@@ -3,6 +3,8 @@
 require_once $_SERVER["DOCUMENT_ROOT"] . "/database/config.php";
 require_once $_SERVER["DOCUMENT_ROOT"] . "/database/todo.php";
 
+// this response variable are the one we're gonna use on our client side for getting the data
+// on our controller
 $response = [];
 
 function get($db_connection)
@@ -57,12 +59,13 @@ function post($db_connection)
 
 function put()
 {
-  return json_encode([]);
+  // implement update
+  return [];
 }
 
 function delete()
 {
-  return json_encode([]);
+  return [];
 }
 
 // this controller will handle different HTTP Requests
