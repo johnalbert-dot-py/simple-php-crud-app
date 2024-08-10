@@ -9,24 +9,20 @@ $response = [];
 
 function get($db_connection)
 {
-
-  // we're gonna defined first our expected result for easily parsing it on our client side
-  $result = [
-    "success" => true,
-    "message" => "",
-    "data" => []
-  ];
-
   // get all todo or task from the database
   $tasks = getTasks($db_connection);
-  $result['data'] = $tasks;
-  return $result;
+  return [
+    "success" => true,
+    "message" => "",
+    "data" => $tasks
+  ];
 }
 
 function post($db_connection)
 {
 
-  // we're gonna defined first our expected result for easily parsing it on our client side
+  // we're gonna defined first our expected result so that we can easily
+  // modify the result throught this function
   $result = [
     "success" => true,
     "message" => "",
